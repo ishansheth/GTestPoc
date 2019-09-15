@@ -1,0 +1,39 @@
+#ifndef MYSTRING_HPP_
+#define MYSTRING_HPP_
+
+#include <string>
+
+class MyString{
+
+  const char* c_string_;
+  const MyString& operator=(const MyString& rhs);
+
+
+public:
+
+  static const char* clonestring(const char* c_string);
+
+  MyString(const char* str) : c_string_(nullptr){
+    Set(str);
+  }
+
+  MyString(const MyString& rhs) : c_string_(nullptr){
+    Set(rhs.c_string_);
+  }
+
+  ~MyString(){
+    delete[] c_string_;
+  }
+
+  const char* c_string(){
+    return c_string_;
+  }
+
+  std::size_t Length(){
+    return c_string_ == nullptr ? 0 : strlen(c_string_);
+  }
+
+  void Set();
+};
+
+#endif

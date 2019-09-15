@@ -1,0 +1,8 @@
+#ifndef ADDITION_HPP_
+#define ADDITION_HPP_
+
+class Addition{
+
+};
+
+#endif
